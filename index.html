@@ -1,0 +1,301 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="https:/fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" href="img/roppi-logo.png">
+    <title>Sanrio - Home</title>
+
+    <style>
+        body{
+            font-family: tahoma;
+            margin: 0;
+            padding: 0;
+            background-image: url(img/bg/blue-pinl.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .parallax-container {
+            position: relative;
+            height: 45vw;
+            overflow: hidden;
+        }
+        .parallax-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            .parallax-container {
+                height: 60vw;
+            }
+        }
+        @media (max-width: 480px) {
+            .parallax-container {
+                height: 80vw;
+            }
+        }
+        .logo-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+            transition: transform 0.3 s ease;
+        }
+        .logowrapper:hover {
+            transform: scale(1.2);
+        }
+        .logo-wrapper img {
+            width: 60vw;
+            max-width: 720px;
+        }
+        
+        @media (max-width: 480px) {
+            .logo-wrapper img {
+                width: 60vw;
+            }
+        }
+
+        .header {
+            height: 18px;
+            background: #e8548f;
+            position: relative;
+            display: flex;
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: 
+                radial-gradient(ellipse 70px 40px, #e8548f 70px, transparent 71px) 0 0/140px 80px repeat-x;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+        nav {
+            background-color: #e8548f;
+            padding: 0;
+        }
+        nav .container ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li a {
+            padding: 0 70px;
+        }
+        .sidenav img {
+            width: 120px;
+            display: block;
+            margin: 20px auto;
+        }
+        .sidenav li a {
+            color: #024b82;
+            text-align: center;
+        }
+        .sidenav .current-page {
+            background-color: #f2f2f2;
+            pointer-events: none;
+            cursor: default;
+        }
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 10vw;
+            background-color: white;
+        }
+        .marquee {
+            overflow: hidden;
+            width: 100%;
+        }
+        .marquee-content {
+            display: flex;
+            gap: 15rem;
+            animation: scroll 12s linear infinite;
+            flex-shrink: 0;
+            align-items: center;
+            min-width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: #024b82;
+            width: max-content;
+            margin-top: 8px;
+        }
+        @keyframes scroll {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(-50%);}
+        }
+        .stripe-container {
+        
+            overflow: visible;
+            
+            
+        }
+        
+        .welcome-text {
+            padding: 5vw 7vw;
+            position: relative;
+            background-color: white;
+            margin: 5vw 10vw;
+            top: 0;
+            border-radius: 30px;
+            color: #024b82;
+            font-size: medium;
+            text-align: center;
+        }
+        .ribbon-top {
+            position: absolute;
+            top: -3vw;
+            right: -9vw;
+            transform: translateX(-50%);
+            width: 15vw;
+            max-width: 200px;
+            height: auto;
+            pointer-events: none;
+        }
+        
+        .video-holder{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        iframe{
+            position: relative;
+            aspect-ratio: 16/9;
+            width: 75vw;
+            height: auto;
+        }
+        .sanriofam {
+            width: 100%;
+            height: auto;
+              
+        }
+        footer {
+            width: 100%;
+            
+        }
+        footer div{
+            background-color: #e8548f;
+            height: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer div span{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header z-depth-5"></header>
+    
+    <div class="parallax-container">
+            <div class="parallax">
+                <img src="img/home/welcome-bg.png" alt="" class="parallax-img">
+            </div>
+        
+        <div class="logo-wrapper">
+            <img src="img/home/sanrio-logo-2.png" alt="sanrio-logo" class="sanrio-logo">
+        </div>
+    </div>
+
+    <div class="navbar">
+        <nav>
+            <div class="container">
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu"><i class="material-icons">menu</i></a>
+
+                <ul class="hide-on-med-and-down">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/characters.html">Characters</a></li>
+                    <li><a href="/collections.html">Collections</a></li>
+                    <li><a href="/fan-corner.html">Fan Corner</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+    </div>
+    <ul class="sidenav" id="mobile-menu">
+            <li><img src="img/home/sanrio-logo.webp" alt="sanrio"></li>
+            <li><a href="" class="current-page">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/characters.html">Characters</a></li>
+            <li><a href="/collections.html">Collections</a></li>
+            <li><a href="/fan-corner.html">Fan Corner</a></li>
+        </ul>
+
+    <div class="marquee-wrapper">
+        <div class="marquee">
+            <ul class="marquee-content">
+                <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                <li><i>One world, connecting smiles.</i></li>
+                <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                <li><i>You can never have too many friends!</i></li>
+
+                <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                <li><i>One world, connecting smiles.</i></li>
+                <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                <li><i>You can never have too many friends!</i></li>
+            </ul>
+            
+        </div>
+    </div>
+
+   
+
+    <section class="stripe-container">    
+        <div class="welcome-text z-depth-1">
+            <h3>Welcome to the world of Sanrio!</h3>
+            <p>Step into a place filled with gentle stories, pastel dreams, and lovable characters who remind us that happiness is found in even the smallest moments. Whether you’re here to explore classics like Hello Kitty or discover new favorites, there’s always something sweet waiting for you.</p>
+
+            <img src="/img/home/ribbon-top.png" alt="ribbon" class="ribbon-top">
+        </div>
+    
+        <div class="video-holder">
+            <iframe src="https://www.youtube.com/embed/eC_5OwDYUVs?si=xvYXDZlPQrtMscGd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  
+        </div>
+        
+    <footer>
+        <img src="img/home/sanriofam.png" alt="characters" class="sanriofam">
+        <div><span>© 2025 SANRIO CO., LTD. ALL RIGHTS RESERVED.</span></div>
+    </footer>
+    </section>
+
+
+    
+
+
+
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.materialboxed').materialbox();
+            $('.parallax').parallax();
+            $('.tabs').tabs();
+            $('.tooltipped').tooltip();
+            $('.scrollspy').scrollSpy();
+        });
+    </script>
+
+</body>
+</html>

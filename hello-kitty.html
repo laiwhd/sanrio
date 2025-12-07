@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="https:/fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/characters.css">
+    <link rel="icon" type="image/png" href="img/roppi-logo.png">
+    <title>Characters - Hello kitty</title>
+
+</head>
+<body>
+    <header>
+    <div>
+        <nav class="z-depth-5">
+            <div class="container header">
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu"><i class="material-icons">menu</i></a>
+
+                <ul class="hide-on-med-and-down">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="/collections.html">Collections</a></li>
+                    <li><a href="/fan-corner.html">Fan Corner</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-menu">
+            <li><img src="img/home/sanrio-logo.webp" alt="sanrio"></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/characters.html">Characters</a></li>
+            <li><a href="/collections.html">Collections</a></li>
+            <li><a href="/fan-corner.html">Fan Corner</a></li>
+        </ul>
+    </div>
+    </header>
+    
+    <main>
+        <div class="container info-container z-depth-1">
+            <div class="row">
+                <div class="col s12 m12 l4 center-align">
+                    <img src="/img/characters/hello-kitty.png" alt="" class="responsive-img character-img">
+                </div>
+                <div class="col 12 m12 l8">
+                    <div class="identity-card">
+                        <h4>Hello Kitty</h4>
+                        <table class="information-table">
+                            <tr>
+                                <td>Name:</td>
+                                <td>Hello Kitty</td>
+                            </tr>
+                            <tr>
+                                <td>Birth date:</td>
+                                <td>November 01</td>
+                            </tr>
+                            <tr>
+                                <td>Sex:</td>
+                                <td>F</td>
+                            </tr>
+                            <tr>
+                                <td>Hometown:</td>
+                                <td>London, England</td>
+                            </tr>
+                            <tr>
+                                <td>Personality:</td>
+                                <td>Friendly, cheerful, and always eager to make new friends while spreading kindness wherever she goes.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container gallery-container z-depth-1">
+            <div class="row">
+                <div class="col s6 m6 l4">
+                    <img src="/img/hello-kitty/01.jpg" alt="" class="responsive-img">
+                </div>
+                <div class="col s6 m6 l4">
+                    <img src="/img/hello-kitty/02.jpg" alt="" class="responsive-img">
+                </div>
+                <div class="col s6 m6 l4">
+                    <img src="/img/hello-kitty/03.jpg" alt="" class="responsive-img">
+                </div>
+                <div class="col s6 m6 l4">
+                    <img src="/img/hello-kitty/04.jpg" alt="" class="responsive-img">
+                </div>
+                <div class="col s6 m6 l4">
+                    <img src="/img/hello-kitty/05.jpg" alt="" class="responsive-img">
+                </div>
+                <div class="col s6 m6 l4">
+                    <img src="/img/hello-kitty/06.jpg" alt="" class="responsive-img">
+                </div>
+            </div>
+        </div>
+
+        <section class="center-align">
+            <a href="/characters.html" class="btn">Return to Characters</a>
+        </section>
+    </main>
+
+    
+
+    <footer>
+        <img src="img/home/sanriofam.png" alt="" class="sanriofam">
+        <div><span>© 2025 SANRIO CO., LTD. ALL RIGHTS RESERVED.</span></div>
+    </footer>
+
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.materialboxed').materialbox();
+            $('.parallax').parallax();
+            $('.tabs').tabs();
+            $('.tooltipped').tooltip();
+            $('.scrollspy').scrollSpy();
+            $('.carousel').carousel();
+            $('.modal').modal();
+                 $('.product').on('click', function() {
+                    let title = $(this).data('title');
+                    let img   = $(this).data('img');
+
+                    $('#modal-title').text(title);
+                    $('#modal-img').attr('src', img);
+                });
+        }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="https:/fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" href="img/roppi-logo.png">
+    <title>Sanrio - About</title>
+
+    <style>
+        header {
+            background: #e8548f;
+            z-index: 100;
+        }
+        body{
+            font-family: tahoma;
+            margin: 0;
+            padding: 0;
+            background-image: url(img/bg/green-stars.jpg);
+            background-size: cover;
+        }
+        nav{
+            position: absolute;
+            z-index: 10;
+
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: 
+                radial-gradient(ellipse 70px 40px, #e8548f 70px, transparent 71px) 0 0/140px 80px repeat-x;
+            z-index: -1;
+        }
+        nav {
+            background-color: #e8548f;
+            padding: 0;
+            position: fixed;
+            z-index: 10;
+        }
+        nav .container ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            z-index: 10;
+        }
+        nav ul li a {
+            padding: 0 70px;
+            z-index: 10;
+        }
+        .sidenav img {
+            width: 120px;
+            display: block;
+            margin: 20px auto;
+        }
+        .sidenav li a {
+            color: #024b82;
+            text-align: center;
+        }
+        .sidenav .current-page {
+            background-color: #f2f2f2;
+            pointer-events: none;
+            cursor: default;
+        }
+        main {
+            
+            align-items: center;
+            padding-top: 150px;
+            padding-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+        }
+        .about-text {
+            width: 70vw;
+            max-width: 720px;
+            padding-bottom: 1vw;
+        }
+        
+        .container-box {
+            background-color: white;
+            padding: 5vw;
+            border-radius: 20px;
+            max-width: 1000px;
+            margin: auto;
+            color: #024b82;
+            width: 90vw;
+        }
+        .container-box img {
+            padding-top: 15
+        }
+        
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 18vw;
+            background-color: white;
+            margin: 40px 0;
+            visibility: hidden;
+        }
+        .marquee {
+            overflow: hidden;
+            width: 100%;
+        }
+        .marquee-content {
+            display: flex;
+            gap: 15rem;
+            animation: scroll 12s linear infinite;
+            flex-shrink: 0;
+            align-items: center;
+            min-width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: #024b82;
+            width: max-content;
+            margin-top: 8px;
+        }
+        @keyframes scroll {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(-50%);}
+        }
+        .shows-text {
+            width: 45vw;
+            max-width: 400px;
+            display: flex;
+            padding-bottom: -10;
+        }
+        
+        .white {
+            width: 90vw;
+            max-width: 1000px;
+            border-radius: 30px;
+            padding-bottom: 20px;
+            margin-top: -15;
+            margin-bottom: 60;
+            padding: 0 30px 30px;
+        }
+        .white h6 {
+            color: #024b82;
+            text-align: center;
+            padding-top: 30;
+            padding: 0 30px;
+            justify-content: center;
+        }
+        .shows-desc {
+            justify-content: center;
+            position: relative;
+            display: flex;
+            width: 100%;
+            padding-top: 10px;
+            margin-bottom: 10px;
+        }
+        .shows-desc p {
+            color: #024b82;
+            text-align: center;
+            position: absolute;
+            padding: 13px 55px 0;
+        }
+        .carousel-item img {
+            border: 2px solid #024b82;
+            border-radius: 20px;
+        }
+        .star-top {
+            position: absolute;
+            display: flex;
+            transform: translateX(50%, -50%);
+            width: 9vw;
+            height: auto;
+            pointer-events: none;
+            right: 190;
+            top: 290;
+            
+        }
+        .bear-top {
+            position: absolute;
+            display: flex;
+            transform: translateX(50%,-50%);
+            width: 8vw;
+            max-width: 200px;
+            height: auto;
+            pointer-events: none;
+            top: 1050;
+            left: 230;
+        }
+        .sanriofam {
+            width: 100%;
+            height: auto;    
+            display: block;
+            margin-bottom: -1px;
+            position: relative;
+        }
+        footer {
+            width: 100%;
+            overflow: visible;
+        }
+        footer div{
+            background-color: #e8548f;
+            height: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer div span{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div>
+        <nav class="z-depth-5">
+            <div class="container header">
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu"><i class="material-icons">menu</i></a>
+
+                <ul class="hide-on-med-and-down">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="/collections.html">Collections</a></li>
+                    <li><a href="/fan-corner.html">Fan Corner</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-menu">
+            <li><img src="img/home/sanrio-logo.webp" alt="sanrio"></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html" class="current-page">About</a></li>
+            <li><a href="/characters.html">Characters</a></li>
+            <li><a href="/collections.html">Collections</a></li>
+            <li><a href="/fan-corner.html">Fan Corner</a></li>
+        </ul>
+    </div>
+    </header>
+    
+    <main>
+        <section>
+            <img src="img/text/about.png" alt="" class="about-text">
+        </section>
+
+        <section class="container-box z-depth-1">
+            <img src="img/about/star-top.png" alt="" class="star-top hide-on-med-and-down">
+            <img src="img/about/bear-top.png" alt="" class="bear-top hide-on-med-and-down">
+            <div class="row">
+                <div class="col s12 m12 l3">
+                    <img src="img/about/kitty-1.jpg" alt="" class="responsive-img">
+                </div>
+                <div class="col s12 m12 l9">
+                    <h4>About Sanrio</h4>
+                    <p>Sanrio is a Japanese company known for creating some of the world’s most beloved characters. Founded in 1960, Sanrio has been spreading happiness and friendship through its charming designs and heartwarming stories. From Hello Kitty to My Melody, Keroppi, and Cinnamoroll, Sanrio characters have captured the hearts of fans of all ages worldwide. Each character has its own personality and story, inspiring creativity, joy, and imagination.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <img src="img/about/sanrios-2.jpg" alt="" class="responsive-img">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l9">
+                    <h4>History</h4>
+                    Sanrio was founded in Tokyo, Japan, in 1960 as a small company selling gift items. Its first big hit was Hello Kitty, introduced in 1974, which quickly became a global icon of cuteness and positivity. Over the years, Sanrio has created hundreds of characters, each with unique traits and stories. The company has expanded into toys, stationery, clothing, animated shows, and even theme parks.
+                </div>
+                <div class="col s12 m12 l3">
+                    <img src="img/about/kitty-2.jpg" alt="" class="responsive-img">
+                </div>
+            </div>
+        </section>
+
+        <div class="marquee-wrapper hide-on-med-and-down">
+        <div class="marquee">
+            <ul class="marquee-content">
+                <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                <li><i>One world, connecting smiles.</i></li>
+                <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                <li><i>You can never have too many friends!</i></li>
+
+                <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                <li><i>One world, connecting smiles.</i></li>
+                <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                <li><i>You can never have too many friends!</i></li>
+            </ul>
+            
+        </div>
+    </div>
+
+        <section>
+            <img src="img/text/shows.png" alt="" class="shows-text">
+        </section>
+        <section class="shows-desc">
+            <p>Discover the charm of Sanrio shows, where cute characters, heartwarming stories, and feel-good adventures come to life.</p>
+        </section>
+        <section class="white z-depth-1">
+            <div class="carousel">
+            <a class="carousel-item" href="#"><img src="img/shows/my-melody-kuromi.jpg"></a>
+            <a class="carousel-item" href="#"><img src="img/shows/onegai-melody.webp"></a>
+            <a class="carousel-item" href="#"><img src="img/shows/pretty-journey.jpg"></a>
+            <a class="carousel-item" href="#"><img src="img/shows/supercute-adventures.jpg"></a>
+            <a class="carousel-item" href="#"><img src="img/shows/sanrio-boys.png"></a>
+            <a class="carousel-item" href="#"><img src="img/shows/super-style.png"></a>
+            <a class="carousel-item" href="#"><img src="img/shows/hello-kitty-paradise.webp"></a>
+        </div>
+        </section>
+
+        
+    </main>
+
+        
+    <footer>
+        <img src="img/home/sanriofam.png" alt="" class="sanriofam">
+        <div><span>© 2025 SANRIO CO., LTD. ALL RIGHTS RESERVED.</span></div>
+    </footer>
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.materialboxed').materialbox();
+            $('.parallax').parallax();
+            $('.tabs').tabs();
+            $('.tooltipped').tooltip();
+            $('.scrollspy').scrollSpy();
+            $('.carousel').carousel();
+        });
+            
+    </script>
+</body>
+</html>

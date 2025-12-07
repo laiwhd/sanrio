@@ -1,0 +1,364 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="https:/fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" href="img/roppi-logo.png">
+    <title>Sanrio - Collections</title>
+
+    <style>
+        header {
+            background: #e8548f;
+            z-index: 100;
+        }
+        body{
+            font-family: tahoma;
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            position: absolute;
+            z-index: 10;
+
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: 
+                radial-gradient(ellipse 70px 40px, #e8548f 70px, transparent 71px) 0 0/140px 80px repeat-x;
+            z-index: -1;
+        }
+        nav {
+            background-color: #e8548f;
+            padding: 0;
+            position: fixed;
+            z-index: 10;
+        }
+        nav .container ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            z-index: 10;
+        }
+        nav ul li a {
+            padding: 0 70px;
+            z-index: 10;
+        }
+        .sidenav img {
+            width: 120px;
+            display: block;
+            margin: 20px auto;
+        }
+        .sidenav li a {
+            color: #024b82;
+            text-align: center;
+        }
+        .sidenav .current-page {
+            background-color: #f2f2f2;
+            pointer-events: none;
+            cursor: default;
+        }
+        body {
+            background-image: url(img/bg/cloudy.jpg);
+            background-size: cover;
+        }
+        main {
+            
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+            overflow: visible;
+            padding-top: 15px;
+        }
+        .collections-text {
+            width: 70vw;
+            max-width: 720px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        
+        @media (max-width: 600px) {
+            .collections-text {
+                width: 85vw;
+                margin: 10px 0 20px;
+            }
+        }
+        @media (max-width: 400px) {
+            .collections-text {
+                width: 85vw;
+                margin: 20px 0 50px;
+            }
+        }
+        
+        .scroll-collections {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 0 0;
+            height: 40vw;
+            border-radius: 30px;
+            overflow-y: hidden;
+        }
+        .scroll-collecetions img {
+            height: 140px;
+            border-radius: 10px;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: transform .2s;
+        }
+        .scroll-collections img:hover {
+            transform: scale(1.02);
+        }
+        .scroll-collections {
+            -ms-overflow-style: none;
+            scrollbar-width: none;  
+        }
+        .collections-title {
+            font-size: 2rem;
+            display: block;
+            padding-bottom: 20px;
+            font-weight: bold;
+        }
+
+
+        .card-items {
+            border-radius: 30px;
+            overflow: hidden;
+            width: 100%;
+            text-align: center;
+            color: #024b82;
+            margin-top: -120;
+        }
+        .card-stores {
+            border-radius: 30px;
+            overflow: hidden;
+            width: 100%;
+            text-align: center;
+            color: #024b82;
+            padding: 15 0;
+            margin: 30px 0 30px;
+        }
+        .collections-title-stores {
+            font-size: 2rem;
+            display: block;
+            font-weight: bold;
+        }
+        .modal {
+            overflow-y: hidden;
+            border-radius: 30px;
+            max-width: 500px;
+        }
+        #modal-img {
+            display: block;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 500px;
+            aspect-ratio: 5/3;
+            object-fit: cover;
+        }
+        #modal-title {
+            color: #024b82;
+        }
+        .btn {
+            background-color: #e8548f;
+            border-radius: 40px;
+        }
+        .btn:hover {
+            background-color: #ffa6c9;
+        }
+        .sanriofam {
+            width: 100%;
+            height: auto;    
+            display: block;
+            margin-bottom: -1px;
+            position: relative;
+        }
+        .candy-top {
+            position: absolute;
+            display: flex;
+            transform: translateX(50%, -50%);
+            width: 15vw;
+            height: auto;
+            pointer-events: none;
+            z-index: 3;
+            right: 175;
+            top: 61vw;
+        }
+        footer {
+            width: 100%;
+            overflow: visible;
+        }
+        footer div{
+            background-color: #e8548f;
+            height: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer div span{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div>
+        <nav class="z-depth-5">
+            <div class="container header">
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu"><i class="material-icons">menu</i></a>
+
+                <ul class="hide-on-med-and-down">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="/collections.html">Collections</a></li>
+                    <li><a href="/fan-corner.html">Fan Corner</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-menu">
+            <li><img src="img/home/sanrio-logo.webp" alt="sanrio"></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/characters.html">Characters</a></li>
+            <li><a href="/collections.html" class="current-page">Collections</a></li>
+            <li><a href="/fan-corner.html">Fan Corner</a></li>
+        </ul>
+    </div>
+    </header>
+
+    <main>
+
+        <section>
+            <img src="img/text/collections.png" alt="" class="collections-text"">
+        </section>
+        <div class="container">
+            <div class="card card-items">
+                <div class="card-content">
+                    <span class="collections-title">Featured Items!</span>
+
+                    <div class="scroll-collections">
+                        <img src="img/collections/choco-cam.jpg" 
+                            class="modal-trigger product" 
+                            data-target="product-modal" 
+                            data-title="Chococat Retrospekt Film Camera" 
+                            data-img="img/collections/choco-cam.jpg">
+                        <img src="img/collections/cinna.jpg" 
+                            class="modal-trigger product" 
+                            data-target="product-modal" 
+                            data-title="Cinamoroll JapanLA Winter Collection"
+                            data-img="img/collections/cinna.jpg">
+                        <img src="img/collections/holiday.jpg" 
+                            class="modal-trigger product"  
+                            data-target="product-modal" 
+                            data-title="Hello Kitty and Friends Holiday Collection"
+                            data-img="img/collections/holiday.jpg">
+                        <img src="img/collections/kitty-bag.jpg" 
+                            class="modal-trigger product" 
+                            data-target="product-modal" 
+                            data-title="Hello Kitty Supercute Prize Pack"
+                            data-img="img/collections/kitty-bag.jpg">
+                        <img src="img/collections/makeup.jpg" 
+                            class="modal-trigger product" 
+                            data-target="product-modal" 
+                            data-title="My Melody and Kuromi Anniversary Collection"
+                            data-img="img/collections/makeup.jpg">
+                        <img src="img/collections/melody-bakeshop.jpg" 
+                            class="modal-trigger product" 
+                            data-target="product-modal" 
+                            data-title="My Melody's Bakeshop Scented Candle Series"
+                            data-img="img/collections/melody-bakeshop.jpg">
+                        <img src="img/collections/nails.jpg" 
+                            class="modal-trigger product" 
+                            data-target="product-modal" 
+                            data-title="Hello Kitty and Friends 3H Nails Press-ons"
+                            data-img="img/collections/nails.jpg">
+                        <img src="img/collections/snow.jpg" 
+                            class="modal-trigger product" 
+                            data-target="product-modal" 
+                            data-title="Hello Kitty and Friends Snow Bunny Series"
+                            data-img="img/collections/snow.jpg">
+                    </div>
+                </div>
+            </div>
+            <img src="img/collections/candy-top.png" alt="" class="candy-top hide-on-med-and-down">
+        </div>
+
+        <div id="product-modal" class="modal">
+            <div class="modal-content">
+
+                <div class="center">
+                    <a class="modal-close btn-flat center"><img src="img/home/ribbon.png" style="width: 45px; padding-bottom: 15px;" alt=""></a>
+                </div>
+
+                <img id="modal-img" class="responsive-img">
+                <h6 id="modal-title" class="center"></h6>
+
+                <div class="center">
+                    <a class="btn">Add to wishlist</a>
+                    <a href="https://www.sanrio.com/collections/new" class="btn">Shop!</a>
+                    <a href=""></a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="container">
+            <div class="card card-stores">
+                <span class="collections-title-stores">Visit Our Stores!</span>
+                
+                <ul class="center">
+                    <li>Sanrio SM Aura Premier, Metro Manila, Philippines</li>
+                    <li>Japan Home Center, Philippines</li>
+                    <li>MINISO, Philippines</li>
+                    <li>Sanrio World Ginza Tokyo, Japan</li>
+                    <li>Sanrio SHIBUYA109 Shibuya Store Tokyo, Japan</li>
+                    <li>Sanrio Smile Shop Los Angeles, USA</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <img src="img/home/sanriofam.png" alt="" class="sanriofam">
+        <div><span>© 2025 SANRIO CO., LTD. ALL RIGHTS RESERVED.</span></div>
+    </footer>
+
+
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.materialboxed').materialbox();
+            $('.parallax').parallax();
+            $('.tabs').tabs();
+            $('.tooltipped').tooltip();
+            $('.scrollspy').scrollSpy();
+            $('.carousel').carousel();
+            $('.modal').modal();
+                 $('.product').on('click', function() {
+                    let title = $(this).data('title');
+                    let img   = $(this).data('img');
+
+                    $('#modal-title').text(title);
+                    $('#modal-img').attr('src', img);
+                });
+        });
+            
+    </script>
+</body>
+</html>

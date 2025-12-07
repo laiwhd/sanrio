@@ -1,0 +1,395 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="img/roppi-logo.png">
+    <title>Sanrio - Fan Corner</title>
+
+    <style>
+        header {
+            background: #e8548f;
+            z-index: 100;
+        }
+        body{
+            font-family: tahoma;
+            margin: 0;
+            padding: 0;
+            background-image: url(img/bg/green-stripe.jpg);
+            background-size: cover;
+        }
+        nav{
+            position: absolute;
+            z-index: 10;
+
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: 
+                radial-gradient(ellipse 70px 40px, #e8548f 70px, transparent 71px) 0 0/140px 80px repeat-x;
+            z-index: -1;
+        }
+        nav {
+            background-color: #e8548f;
+            padding: 0;
+            position: fixed;
+            z-index: 10;
+        }
+        nav .container ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            z-index: 10;
+        }
+        nav ul li a {
+            padding: 0 70px;
+            z-index: 10;
+        }
+        .sidenav img {
+            width: 120px;
+            display: block;
+            margin: 20px auto;
+        }
+        .sidenav li a {
+            color: #024b82;
+            text-align: center;
+        }
+        .sidenav .current-page {
+            background-color: #f2f2f2;
+            pointer-events: none;
+            cursor: default;
+        }
+        main {
+            align-items: center;
+            padding-top: 150px;
+            padding-bottom: 70px;
+            display: flex;
+            flex-direction: column;
+            text-align: justify;
+        }
+        .fan-corner-text {
+            width: 70vw;
+            max-width: 720px;
+            padding-bottom: 1vw;
+    
+        }
+        .character-card {
+            background: #f2f2f1;
+            border: 2px solid #024b82;
+            margin-bottom: 25px;
+            padding: 0 30 10;
+            border-radius: 20px;
+            color: #024b82;
+            transition: tranasform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .character-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .character-card img {
+            width: 100%;
+            max-width: 300px;
+            margin: 20 auto;
+            display: block;
+        }
+        .character-card h6 {
+            text-align: center;
+            font-weight: 600;
+        }
+        .character-card ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .character-card ul li::before {
+            content: "⭒";
+            margin-right: 10px;
+            margin-left: -10px;
+        }
+        .character-quiz {
+            padding: 50;
+            background: white;
+            border-radius: 30px;
+        }
+        .character-quiz h4 {
+            color: #024b82;
+            margin-bottom: 20px
+        }
+        .character-quiz p {
+            color: #024b82;
+            margin-top: -30px;
+        }
+        .contact-us-text {
+            width: 70vw;
+            max-width: 720px;
+            margin-top: 35px;
+        }
+        .contact-container {
+            background-color: white;
+            padding: 20 50 20;
+            border-radius: 30px;
+            color: #024b82;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .newsletter-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+
+        }
+        .newsletter-form input {
+            padding: 8px;
+            border: 2px solid #024b82;
+            border-radius: 30px;
+        }
+        .subscribe-btn {
+            background-color: #e8548f;
+            border-radius: 30px;
+        }
+        .subscribe-btn:hover {
+            background-color: #fa7bae;
+        }
+        .subscribe-btn:active, .subscribe-btn:focus {
+            background-color: #136cb0;
+            box-shadow: none;
+        }
+        .ribbon-top-1 {
+            position: absolute;
+            display: flex;
+            transform: translateX(50%,-50%);
+            width: 15vw;
+            max-width: 200px;
+            height: auto;
+            pointer-events: none;
+            top: 110vw;
+            right: 12vw;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px ;
+        }
+        .social-links a i {
+            font-size: 30px;
+            color: #e8548f;
+            transition: transform 0.3s ease, color 0.3 ease;
+        }
+        .social-links a:hover i {
+            transform: scale(1.2);
+            color: #e07da5;
+        }
+        .connect-logo {
+            transition: transform 0.3s ease;
+        }
+        .connect-logo:hover {
+            transform: scale(1.2);
+        }
+        .sanriofam {
+            width: 100%;
+            height: auto;    
+            display: block;
+            margin-bottom: -1px;
+            position: relative;
+        }
+        footer {
+            width: 100%;
+            overflow: visible;
+            
+        }
+        footer div{
+            background-color: #e8548f;
+            height: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer div span{
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+    <div>
+        <nav class="z-depth-5">
+            <div class="container header">
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu"><i class="material-icons">menu</i></a>
+
+                <ul class="hide-on-med-and-down">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="/collections.html">Collections</a></li>
+                    <li><a href="/fan-corner.html">Fan Corner</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-menu">
+            <li><img src="img/home/sanrio-logo.webp" alt="sanrio"></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/characters.html">Characters</a></li>
+            <li><a href="/collections.html">Collections</a></li>
+            <li><a href="/fan-corner.html" class="current-page">Fan Corner</a></li>
+        </ul>
+    </div>
+    </header>
+
+    <main>
+        <section>
+            <img src="img/text/fan-corner.png" alt="" class="fan-corner-text">
+        </section>
+
+        <div class="container character-quiz z-depth-1">
+            <section>
+                <h4 class="center">WHICH SANRIO CHARACTER ARE YOU?</h4>
+                <div class="row">
+                    <div class="col s12 m6 l4">
+                        <div class="character-card">
+                            <img src="img/fan-corner/hello-kitty.jpg" alt="" class="responsive-img">
+                            <h6>Hello Kitty</h6>
+                            <ul>
+                                <li>Friendly</li>
+                                <li>Caring</li>
+                                <li>Helpful</li>
+                                <li>Optimistic</li>
+                                <li>Warm-hearted</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="character-card">
+                            <img src="img/fan-corner/pompompurin.jpg" alt="" class="responsive-img">
+                            <h6>Pompompurin</h6>
+                            <ul>
+                                <li>Laid-back</li>
+                                <li>Playful</li>
+                                <li>Food-lover</li>
+                                <li>Friendly</li>
+                                <li>Easygoing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="character-card">
+                            <img src="img/fan-corner/my-melody.jpg" alt="" class="responsive-img">
+                            <h6>My Melody</h6>
+                            <ul>
+                                <li>Kind</li>
+                                <li>Pure</li>
+                                <li>Hardworking</li>
+                                <li>Thoughtful</li>
+                                <li>Supportive</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m6 l4">
+                        <div class="character-card">
+                            <img src="img/fan-corner/pochacco.jpg" alt="" class="responsive-img">
+                            <h6>Pochacco</h6>
+                            <ul>
+                                <li>Energetic</li>
+                                <li>Sporty</li>
+                                <li>Curious</li>
+                                <li>Cheerful</li>
+                                <li>Adventurous</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="character-card">
+                            <img src="img/fan-corner/cinamoroll.jpg" alt="" class="responsive-img">
+                            <h6>Cinnamoroll</h6>
+                            <ul>
+                                <li>Shy</li>
+                                <li>Gentle</li>
+                                <li>Loyal</li>
+                                <li>Affectionate</li>
+                                <li>Comforting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4">
+                        <div class="character-card">
+                            <img src="img/fan-corner/kuromi.jpg" alt="" class="responsive-img">
+                            <h6>Kuromi</h6>
+                            <ul>
+                                <li>Mischievous</li>
+                                <li>Sassy</li>
+                                <li>Confident</li>
+                                <li>Playful</li>
+                                <li>Cutely dramatic</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="center">Which Sanrio character matches your personality? Share with friends!</p>
+            </section>
+        </div>
+
+        <section>
+            <img src="img/text/contact-us.png" alt="" class="contact-us-text">
+        </section>
+
+        <div class="container contact-container z-depth-1">
+            <img src="/img/home/ribbon-top.png" alt="ribbon" class="ribbon-top-1 hide-on-med-and-down">
+            <h4>Connect with us?</h4>
+            <p>Follow us, and keep in touch with our latest news and releases!</p>
+            <div class="social-links">
+                <a href="https://facebook.com/sanrio/"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/sanrio/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/sanrio"><i class="fab fa-twitter"></i></a>
+            </div>
+                
+            <p>Want to sign up to our newsletter? Subscribe now!</p>
+            <div class="newsletter-box">
+
+                <div class="newsletter-form">
+                    <input type="email" placeholder="email" class="browser-default">
+                    <button class="btn subscribe-btn">Subscribe</button>
+                </div>
+
+                <img src="img/home/sanrio-logo.webp" style="width: 100px;" alt="" class="hide-on-small-only connect-logo">
+            </div>      
+        </div>
+    </main>
+    <footer>
+        <img src="img/home/sanriofam.png" alt="" class="sanriofam">
+        <div><span>© 2025 SANRIO CO., LTD. ALL RIGHTS RESERVED.</span></div>
+    </footer>
+    
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.materialboxed').materialbox();
+            $('.parallax').parallax();
+            $('.tabs').tabs();
+            $('.tooltipped').tooltip();
+            $('.scrollspy').scrollSpy();
+            $('.carousel').carousel();
+        }); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="https:/fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" href="img/roppi-logo.png">
+    <title>Sanrio - Characters</title>
+
+    <style>
+        header {
+            background: #e8548f;
+        }
+        nav{
+            position: fixed;
+            z-index: 1;
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: 
+                radial-gradient(ellipse 70px 40px, #e8548f 70px, transparent 71px) 0 0/140px 80px repeat-x;
+            z-index: -1;
+        }
+        nav {
+            background-color: #e8548f;
+            padding: 0;
+        }
+        nav .container ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li a {
+            padding: 0 70px;
+        }
+        .sidenav img {
+            width: 120px;
+            display: block;
+            margin: 20px auto;
+        }
+        .sidenav li a {
+            color: #024b82;
+            text-align: center;
+        }
+        .sidenav .current-page {
+            background-color: #f2f2f2;
+            pointer-events: none;
+            cursor: default;
+        }
+        body{
+            font-family: tahoma;
+            margin: 0;
+            padding: 0;
+            background-image: url(img/bg/green-stripe.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        main {
+            
+            padding: 0 18vw 5vw;
+            padding-top: 220px;
+        }
+        .characters p {
+            text-align: center;
+            margin-top: -20;
+            color: white;
+            font-weight: 700;
+            filter: 
+                drop-shadow(2px 0 3px #e8548f)
+                drop-shadow(-2px 0 3px #e8548f)
+                drop-shadow(0 2px 3px #e8548f)
+                drop-shadow(0 -2px 3px #e8548f);
+        }
+        .characters div img {
+            transform: transform 0.4s ease;
+        }
+        .characters div img:hover {
+            transform: scale(1.1);
+        }
+        .characters-text {
+            background-color: white;
+            padding: 3vw 8vw;
+            text-align: center;
+            border-radius: 30px;
+            color: #024b82;
+            font-weight: 600;
+            position: relative;
+        }
+        .characters-text h5 {
+            font-weight: bold;
+        }
+        .text-characters {
+            position: absolute;
+            display: block;
+            width: 40vw;
+            transform: translateX(50%, -50%);
+            top: -5vw;
+            right: 12vw;
+        }
+        .ribbon-top {
+            position: absolute;
+            display: flex;
+            transform: translateX(50%,-50%);
+            width: 15vw;
+            max-width: 200px;
+            height: auto;
+            pointer-events: none;
+            top: -3vw;
+            right: -3vw;
+        }
+        @media (max-width: 400px) {
+            .character-section {
+                margin-top: -60px;
+            }
+        }
+        .linked {
+            cursor: pointer;
+        }
+        .not-linked {
+            cursor: default;
+        }
+        .marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            padding: 0 5vw;
+        }
+        .marquee {
+            overflow: hidden;
+            width: 100%;
+        }
+        .marquee-content {
+            display: flex;
+            gap: 15rem;
+            animation: scroll 12s linear infinite;
+            flex-shrink: 0;
+            align-items: center;
+            min-width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: #024b82;
+            width: max-content;
+            margin-top: 8px;
+        }
+        @keyframes scroll {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(-50%);}
+        }
+        .sanriofam {
+            width: 100%;
+            height: auto;    
+            display: block;
+            margin-bottom: -1px;
+            position: relative;
+        }
+        footer {
+            width: 100%;
+            overflow: visible;
+            
+        }
+        footer div{
+            background-color: #e8548f;
+            height: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer div span{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    
+    </header>
+    <div>
+        <nav class="z-depth-5">
+            <div class="container header">
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu"><i class="material-icons">menu</i></a>
+
+                <ul class="hide-on-med-and-down">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/characters.html">Characters</a></li>
+                    <li><a href="/collections.html">Collections</a></li>
+                    <li><a href="/fan-corner.html">Fan Corner</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-menu">
+            <li><img src="img/home/sanrio-logo.webp" alt="sanrio"></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/characters.html" class="current-page">Characters</a></li>
+            <li><a href="/collections.html">Collections</a></li>
+            <li><a href="/fan-corner.html">Fan Corner</a></li>
+        </ul>
+    </div>
+    <main>
+
+        <section class="character-section">
+            <div class="characters-text z-depth-1">
+                <img src="img/text/characters.png" alt="" class="text-characters">
+                <p><br>Explore your favorite characters and discover the magic they bring to everyday life!</p>
+
+                <img src="/img/home/ribbon-top.png" alt="ribbon" class="ribbon-top">
+            </div>
+        </section>
+
+        <section class="characters">
+            <div class="row linked">
+                <div class="col s6 m6 l4">
+                    <a href="/hello-kitty.html">
+                        <img src="/img/characters/hello-kitty.png" alt="characters" class="responsive-img materialboxed">
+                    </a>
+                    <p>Hello Kitty</p>
+                </div>
+                <div class="col s6 m6 l4">
+                    <a href="/cinnamoroll.html">
+                        <img src="/img/characters/cinamoroll.png" alt="characters" class="responsive-img materialboxed">
+                    </a>
+                    <p>Cinamoroll</p>
+                </div>
+                <div class="col s6 m6 l4">
+                    <a href="/pompompurin.html">
+                        <img src="/img/characters/pompompurin.png" alt="characters" class="responsive-img materialboxed">
+                    </a>
+                    <p>Pompompurin</p>
+                </div>
+            <!--hati-->
+                <div class="col s6 m6 l4">
+                    <a href="/kuromi.html">
+                        <img src="/img/characters/kuromi.png" alt="characters" class="responsive-img materialboxed">
+                    </a>
+                    <p>Kuromi</p>
+                </div>
+                <div class="col s6 m6 l4">
+                    <a href="/pochacco.html">
+                        <img src="/img/characters/pochacco.png" alt="characters" class="responsive-img materialboxed">
+                    </a>
+                    <p>Pochacco</p>
+                </div>
+                <div class="col s6 m6 l4">
+                    <a href="/my-melody.html">
+                        <img src="/img/characters/my-melody.png" alt="characters" class="responsive-img materialboxed">
+                    </a>
+                    <p>My Melody</p>
+                </div>
+            </div>
+
+            <div class="marquee-wrapper">
+                <div class="marquee">
+                    <ul class="marquee-content">
+                        <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                        <li><i>Check out these other sanrio characters!</i></li>
+                        <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                        <li><i>Check out these other sanrio characters!</i></li>
+
+                        <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                        <li><i>Check out these other sanrio characters!</i></li>
+                        <li><img src="/img/home/ribbon.png" alt="ribbon" style="width: 30px;"></li>
+                        <li><i>Check out these other sanrio characters!</i></li>
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="row not-linked">
+                <div class="col s6 m6 l4">
+                    <img src="/img/characters/keroppi.png" alt="characters" class="responsive-img materialboxed">
+                    <p>Keroppi</p>
+                </div>
+                <div class="col s6 m6 l4">
+                    <img src="/img/characters/twin-stars.png" alt="characters" class="responsive-img materialboxed">
+                    <p>Little Twin Stars</p>
+                </div>
+                <div class="col s6 m6 l4">
+                    <img src="/img/characters/badtz-maru.png" alt="characters" class="responsive-img materialboxed">
+                    <p>Badtz Maru</p>
+                </div>
+            <!--hati-->
+                <div class="col s6 m6 l4">
+                    <img src="/img/characters/tuxedosam.png" alt="characters" class="responsive-img materialboxed">
+                    <p>Tuxedo Sam</p>
+                </div>
+                <div class="col s6 m6 l4">
+                    <img src="/img/characters/gudetama.png" alt="characters" class="responsive-img materialboxed">
+                    <p>Gudetama</p>
+                </div>
+                <div class="col s6 m6 l4">
+                    <img src="/img/characters/usahana.png" alt="characters" class="responsive-img materialboxed">
+                    <p>Usahana</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <img src="img/home/sanriofam.png" alt="" class="sanriofam">
+        <div><span>© 2025 SANRIO CO., LTD. ALL RIGHTS RESERVED.</span></div>
+    </footer>
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.materialboxed').materialbox();
+            $('.parallax').parallax();
+            $('.tabs').tabs();
+            $('.tooltipped').tooltip();
+            $('.scrollspy').scrollSpy();
+        });
+    </script>
+</body>
+</html>
