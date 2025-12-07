@@ -29,7 +29,7 @@ nav .container ul {
     list-style: none;
 }
 nav ul li a {
-    padding: 0;
+    padding: 0 50px;
 }
 .sidenav img {
     width: 120px;
