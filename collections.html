@@ -183,16 +183,19 @@
             margin-bottom: -1px;
             position: relative;
         }
+        .card-content {
+            position: relative;
+        }
         .candy-top {
-            position: absolute;
             display: flex;
+            position: absolute;
             transform: translateX(50%, -50%);
             width: 15vw;
             height: auto;
             pointer-events: none;
             z-index: 3;
-            right: 175;
-            top: 61vw;
+            right: 0vw;
+            top: 2vw;
         }
         footer {
             width: 100%;
@@ -294,9 +297,10 @@
                             data-title="Hello Kitty and Friends Snow Bunny Series"
                             data-img="img/collections/snow.jpg">
                     </div>
+                    <img src="img/collections/candy-top.png" alt="" class="candy-top">
                 </div>
             </div>
-            <img src="img/collections/candy-top.png" alt="" class="candy-top hide-on-med-and-down">
+            
         </div>
 
         <div id="product-modal" class="modal">

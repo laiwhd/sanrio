@@ -167,27 +167,67 @@
             border: 2px solid #024b82;
             border-radius: 20px;
         }
+        .row-div {
+            position: relative;
+        }
         .star-top {
             position: absolute;
-            display: flex;
             transform: translateX(50%, -50%);
             width: 9vw;
             height: auto;
             pointer-events: none;
-            right: 190;
-            top: 290;
+            right: -9vw;
+            top: -7vw;
             
         }
         .bear-top {
             position: absolute;
-            display: flex;
             transform: translateX(50%,-50%);
             width: 8vw;
             max-width: 200px;
             height: auto;
             pointer-events: none;
-            top: 1050;
-            left: 230;
+            bottom: -5vw ;
+            left: -7vw;
+        }
+        .carousel-div {
+            position: relative;
+        }
+        .cake-top {
+            position: absolute;
+            transform: translateX(50%, -50%);
+            width: 14vw;
+            height: auto;
+            pointer-events: none;
+            left: 0vw;
+            bottom: -4vw;
+        }
+        .candy-top {
+            position: absolute;
+            transform: translateX(50%, -50%);
+            width: 20vw;
+            height: auto;
+            pointer-events: none;
+            right: -6vw;
+            bottom: -4.8vw;
+        }
+        .cake-top-2 {
+            position: absolute;
+            transform: translateX(50%, -50%);
+            width: 16vw;
+            height: auto;
+            pointer-events: none;
+            left: 0vw;
+            bottom: -7vw;
+        }
+        .candy-top-2 {
+            position: absolute;
+            transform: translateX(50%, -50%);
+            width: 23vw;
+            height: auto;
+            pointer-events: none;
+            right: -9vw;
+            bottom: -7vw;
         }
         .sanriofam {
             width: 100%;
@@ -250,9 +290,10 @@
         </section>
 
         <section class="container-box z-depth-1">
-            <img src="img/about/star-top.png" alt="" class="star-top hide-on-med-and-down">
-            <img src="img/about/bear-top.png" alt="" class="bear-top hide-on-med-and-down">
-            <div class="row">
+            <div class="row-div">
+                <div class="row">
+                <img src="img/about/star-top.png" alt="" class="star-top hide-on-med-and-down">
+                <img src="img/about/bear-top.png" alt="" class="bear-top hide-on-med-and-down">
                 <div class="col s12 m12 l3">
                     <img src="img/about/kitty-1.jpg" alt="" class="responsive-img">
                 </div>
@@ -274,6 +315,7 @@
                 <div class="col s12 m12 l3">
                     <img src="img/about/kitty-2.jpg" alt="" class="responsive-img">
                 </div>
+            </div>
             </div>
         </section>
 
@@ -301,15 +343,22 @@
             <p>Discover the charm of Sanrio shows, where cute characters, heartwarming stories, and feel-good adventures come to life.</p>
         </section>
         <section class="white z-depth-1">
-            <div class="carousel">
-            <a class="carousel-item" href="#"><img src="img/shows/my-melody-kuromi.jpg"></a>
-            <a class="carousel-item" href="#"><img src="img/shows/onegai-melody.webp"></a>
-            <a class="carousel-item" href="#"><img src="img/shows/pretty-journey.jpg"></a>
-            <a class="carousel-item" href="#"><img src="img/shows/supercute-adventures.jpg"></a>
-            <a class="carousel-item" href="#"><img src="img/shows/sanrio-boys.png"></a>
-            <a class="carousel-item" href="#"><img src="img/shows/super-style.png"></a>
-            <a class="carousel-item" href="#"><img src="img/shows/hello-kitty-paradise.webp"></a>
-        </div>
+            <div class="carousel-div">
+                <img src="img/about/cake-top.png" alt="" class="cake-top hide-on-med-and-down">
+                <img src="img/about/candy-top.png" alt="" class="candy-top hide-on-med-and-down">
+                <img src="img/about/cake-top.png" alt="" class="cake-top-2 hide-on-small-only hide-on-large-only">
+                <img src="img/about/candy-top.png" alt="" class="candy-top-2 hide-on-small-only hide-on-large-only">
+
+                <div class="carousel">
+                <a class="carousel-item" href="#"><img src="img/shows/my-melody-kuromi.jpg"></a>
+                <a class="carousel-item" href="#"><img src="img/shows/onegai-melody.webp"></a>
+                <a class="carousel-item" href="#"><img src="img/shows/pretty-journey.jpg"></a>
+                <a class="carousel-item" href="#"><img src="img/shows/supercute-adventures.jpg"></a>
+                <a class="carousel-item" href="#"><img src="img/shows/sanrio-boys.png"></a>
+                <a class="carousel-item" href="#"><img src="img/shows/super-style.png"></a>
+                <a class="carousel-item" href="#"><img src="img/shows/hello-kitty-paradise.webp"></a>
+                </div>
+            </div>
         </section>
 
         
